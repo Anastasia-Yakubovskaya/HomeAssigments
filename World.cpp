@@ -1,7 +1,11 @@
 /*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha1*/
-
+#include "header.h"
 #include <iostream>
-int main (int argc,char  *argv[])
+#include <string>
+using namespace std;
+extern string name;
+void Zadacha1 ()
 {
-        std::cout<<"Hello,world"<<std::endl;
+        cout << "Hello," << name << "!" <<  endl;
 }
+

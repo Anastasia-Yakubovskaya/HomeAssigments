@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
-
-int main()
+#include "header.h"
+using namespace std;
+string name;
+int main ()
 {
-	std::string vvod;
-	std:: cin>>vvod;
-	std::cout<<"Hello," << vvod << std::endl;
+	name = "World";
+	Zadacha1();
+	
 }
