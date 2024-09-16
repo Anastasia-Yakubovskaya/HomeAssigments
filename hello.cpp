@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha1*/
 #include <iostream>
 #include <string>
 #include "header.h"
