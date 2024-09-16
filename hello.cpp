@@ -7,6 +7,11 @@ int main ()
 {
 	name = "World";
 	Zadacha1();
-	cin >> name;
-	Zadacha1();
+	while (true) {
+		cin >> name;
+		Zadacha1();
+		if (name == "exit"){
+			break;
+		}
+	}
 }
