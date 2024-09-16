@@ -7,5 +7,6 @@ int main ()
 {
 	name = "World";
 	Zadacha1();
-	
+	cin >> name;
+	Zadacha1();
 }

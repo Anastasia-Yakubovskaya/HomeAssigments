@@ -6,6 +6,6 @@ using namespace std;
 extern string name;
 void Zadacha1 ()
 {
-        cout << "Hello," << name << "!" <<  endl;
+        cout << "Hello, " << name << "!" <<  endl;
 }
 
