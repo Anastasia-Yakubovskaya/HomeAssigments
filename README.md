@@ -6,6 +6,8 @@ Anastasya Yakubovskaya, B24.81 - mm
 
 st130155@student.spbu.ru
 
-Compilate
+Compilate make.txt
 
-Launch
+Launch Programm
+
+If you enter "exit" , then there will be an exit from the loop while
