@@ -1,28 +1,21 @@
-#include <fstream>
+#include "header.h"
 #include <iostream>
-#include <filesystem>
-#include <algorithm>
+
 int main() {
-    std::ifstream infile;
-    std::ofstream outfile;
-
-    infile.open("Assigment2.txt", std::ios::binary);
+    char* buffer = nullptr;
+    std::uintmax_t fileSize = 0;
 
 
-    std::filesystem::path path("Assigment2.txt");
-    std::uintmax_t fileSize = std::filesystem::file_size(path);
+    const std::string inputFile = "Assigment2.txt";
+    const std::string outputFile = "Nov.txt";
 
-    char* buffer = new char[fileSize];
 
-    infile.read(buffer, fileSize);
-    outfile.open("Nov.txt",std::ios::binary|std::ios::out);
-    std::reverse(buffer, buffer + fileSize);
-    outfile.write(buffer, fileSize);
+    readFile(inputFile, buffer, fileSize);
+
+    reverseBuffer(buffer, fileSize);       
+    writeFile(outputFile, buffer, fileSize); 
 
     delete[] buffer;
 
-
-    infile.close();
-    outfile.close();
     return 0;
 }
