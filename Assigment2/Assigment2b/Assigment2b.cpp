@@ -1,34 +1,38 @@
 #include <iostream>
-#include<stack>
 #include<string>
 #include<sstream>
 #include<cstring>
-
+#include <cstdlib>
 
 double  Calculator (const char* input){
-    std::stack<double> stack;
+    const int max_size = 100;
+    double* stack = new double [max_size];
+    int size = 0;
+
     char* simvol = strtok(const_cast<char*>(input)," ");
     while (simvol != nullptr) {
         if (std::strchr("0123456789", simvol[0])) {
-         stack.push(std::stod(simvol));
+         stack[size++] = std::stod(simvol);
         } else {
 
-            double a = stack.top(); stack.pop();
-            double b = stack.top(); stack.pop();
+            double a = stack[--size];
+            double b = stack[--size];
 
             if (strcmp(simvol, "+") == 0) {
-                stack.push(a + b);
+                stack[size++] =  a + b;
             } else if (strcmp(simvol, "-") == 0) {
-                stack.push(a - b);
+                stack[size++] = a - b;
             } else if (strcmp(simvol, "*") == 0) {
-                stack.push(a * b);
+                stack[size++] = a * b;
             } else if (strcmp(simvol, "/") == 0) {
-                stack.push(a / b);
+                stack[size++] = a / b;
             }
         }
         simvol = strtok(nullptr, " ");
     }
-    return  stack.top();
+    double result = stack[--size];
+    delete[] stack;
+    return result;
 }
 
 int main() {

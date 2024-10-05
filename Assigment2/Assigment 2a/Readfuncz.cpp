@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha2*/
 #include <fstream>
 #include <iostream>
 #include <filesystem>
