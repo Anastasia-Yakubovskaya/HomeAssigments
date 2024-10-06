@@ -4,8 +4,8 @@
 ## Contacts
 st130155@stdudent.spbu.ru
 ## Description
-Home assigment2b - 
+Home assigment2b - interprets the string as the reverse Polish notation of thr expression 
 ## Build
-
+Makefile
 ## Run
-
+./Programm
