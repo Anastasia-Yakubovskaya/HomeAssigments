@@ -22,11 +22,11 @@ double Calculator(const char* input) {
             if (strcmp(simvol, "+") == 0) {
                 stack[size++] = a + b;
             } else if (strcmp(simvol, "-") == 0) {
-                stack[size++] = a - b;
+                stack[size++] = b - a;
             } else if (strcmp(simvol, "*") == 0) {
                 stack[size++] = a * b;
             } else if (strcmp(simvol, "/") == 0) {
-                stack[size++] = a / b;
+                stack[size++] = b/a;
             }
         }
         simvol = strtok(nullptr, " ");
