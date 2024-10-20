@@ -58,6 +58,17 @@ public:
     int getWeaponDamage() const {
         return weapon.getDamage();
     }
+    
+    void jump() {
+	return;
+   }
+   void fire() {
+	return;
+   }
+
+  void move() {
+	return;
+  }
 };
 
 class SuperSila1 : public Transformer {
