@@ -1,4 +1,4 @@
-#include "SuperSila1.hpp"
+#include "SuperSila1.h"
 
 SuperSila1::SuperSila1(std::string name, std::string model, int power, Pilot& pilot, Weapon weapon, int speed)
     : Transformer(name, model, power, pilot, weapon), speed(speed) {}

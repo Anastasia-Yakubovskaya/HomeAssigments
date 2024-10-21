@@ -1,7 +1,7 @@
-#ifndef TANKCAPACITY_HPP
-#define TANKCAPACITY_HPP
+#ifndef TANKCAPACITY_H
+#define TANKCAPACITY_H
 
-#include "Transformer.hpp"
+#include "Transformer.h"
 
 class TankCapacity : public Transformer {
 private:

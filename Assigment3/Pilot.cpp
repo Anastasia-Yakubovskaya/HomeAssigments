@@ -1,4 +1,4 @@
-#include "Pilot.hpp"
+#include "Pilot.h"
 
 Pilot::Pilot(std::string name) : name(name) {}
 

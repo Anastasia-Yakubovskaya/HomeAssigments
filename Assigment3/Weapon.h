@@ -1,5 +1,5 @@
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#ifndef WEAPON_H
+#define WEAPON_H
 
 #include <string>
 

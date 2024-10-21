@@ -1,7 +1,7 @@
-#ifndef SUPERSILA1_HPP
-#define SUPERSILA1_HPP
+#ifndef SUPERSILA1_H
+#define SUPERSILA1_H
 
-#include "Transformer.hpp"
+#include "Transformer.h"
 
 class SuperSila1 : public Transformer {
 private:

@@ -1,5 +1,5 @@
-#ifndef PILOT_HPP
-#define PILOT_HPP
+#ifndef PILOT_H
+#define PILOT_H
 
 #include <string>
 

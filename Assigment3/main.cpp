@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Pilot.hpp"
-#include "Weapon.hpp"
-#include "SuperSila1.hpp"
-#include "SuperSila2.hpp"
-#include "TankCapacity.hpp"
+#include "Pilot.h"
+#include "Weapon.h"
+#include "SuperSila1.h"
+#include "SuperSila2.h"
+#include "TankCapacity.h"
 
 int main() {
     Pilot pilot1("Optimus Prime");

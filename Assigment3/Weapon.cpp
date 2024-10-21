@@ -1,4 +1,4 @@
-#include "Weapon.hpp"
+#include "Weapon.h"
 
 Weapon::Weapon(std::string type, int damage) : type(type), damage(damage) {}
 

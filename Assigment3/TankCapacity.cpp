@@ -1,4 +1,4 @@
-#include "TankCapacity.hpp"
+#include "TankCapacity.h"
 
 TankCapacity::TankCapacity(std::string name, std::string model, int power, Pilot& pilot, Weapon weapon, int volume)
     : Transformer(name, model, power, pilot, weapon), volume(volume) {}

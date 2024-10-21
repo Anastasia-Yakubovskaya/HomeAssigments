@@ -1,9 +1,9 @@
-#ifndexf TRANSFORMER_HPP
-#define TRANSFORMER_HPP
+#ifndef TRANSFORMER_H
+#define TRANSFORMER_H
 
 #include <string>
-#include "Pilot.hpp"
-#include "Weapon.hpp"
+#include "Pilot.h"
+#include "Weapon.h"
 
 class Transformer {
 private:
