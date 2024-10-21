@@ -25,9 +25,9 @@ public:
     std::string getWeaponType() const;
     int getWeaponDamage() const;
     
-    void jump();
-    void fire();
-    void move();
+    bool jump();
+    bool fire();
+    bool move();
 };
 
 #endif

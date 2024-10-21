@@ -17,6 +17,12 @@ void Transformer::setPower(int newPower) { power = newPower; }
 std::string Transformer::getWeaponType() const { return weapon.getType(); }
 int Transformer::getWeaponDamage() const { return weapon.getDamage(); }
 
-void Transformer::jump() { return; }
-void Transformer::fire() { return; }
-void Transformer::move() { return; }
+bool Transformer::jump() { 
+    return true; 
+}
+bool Transformer::fire() {
+    return true; 
+}
+bool Transformer::move() {
+    return true; 
+}
