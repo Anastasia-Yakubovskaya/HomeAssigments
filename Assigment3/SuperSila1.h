@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha3*/
 #ifndef SUPERSILA1_H
 #define SUPERSILA1_H
 

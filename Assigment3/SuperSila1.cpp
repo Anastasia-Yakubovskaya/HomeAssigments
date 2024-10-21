@@ -1,4 +1,7 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha3*/
 #include "SuperSila1.h"
+#include "Pilot.h"
+#include "Weapon.h"
 
 SuperSila1::SuperSila1(std::string name, std::string model, int power, Pilot& pilot, Weapon weapon, int speed)
     : Transformer(name, model, power, pilot, weapon), speed(speed) {}

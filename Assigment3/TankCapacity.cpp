@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha3*/
 #include "TankCapacity.h"
 
 TankCapacity::TankCapacity(std::string name, std::string model, int power, Pilot& pilot, Weapon weapon, int volume)

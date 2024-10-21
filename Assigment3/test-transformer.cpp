@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha3*/
 #include "gtest/gtest.h"
 #include "Transformer.h"
 #include "Pilot.h" 

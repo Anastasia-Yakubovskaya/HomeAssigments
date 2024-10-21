@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha3*/
 #ifndef WEAPON_H
 #define WEAPON_H
 
