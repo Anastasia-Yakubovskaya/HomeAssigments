@@ -21,7 +21,13 @@ TankCapacity.o: TankCapacity.h TankCapacity.cpp
 
 Weapon.o: Weapon.h Weapon.cpp
 	g++ -c Weapon.cpp 
-
+	
+	
+testtransformer: test-transformer.o Transformer.o Weapon.o Pilot.o
+	g++ test-transformer.o Transformer.o Weapon.o Pilot.o -o testtransformer -lgtest -lgtest_main -pthread
+test-transformer.o: test-transformer.cpp
+	g++ -c test-transformer.cpp
+	
 clean:
 	rm -f myProg *.o 
 

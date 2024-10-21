@@ -10,10 +10,12 @@ private:
     std::string name;
     std::string model;
     int power;
-    Pilot& pilot; // ассоциация
-    Weapon weapon; // композиция
+    Pilot& pilot; // Ассоциация
+    Weapon weapon; // Композиция
 public:
+    Transformer();
     Transformer(std::string p_name, std::string p_model, int p_power, Pilot& pilot, Weapon weapon);
+ 
     virtual ~Transformer();
     
     std::string getName() const;

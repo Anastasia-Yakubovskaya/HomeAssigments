@@ -8,6 +8,7 @@ private:
     std::string type;
     int damage;
 public:
+    Weapon();
     Weapon(std::string type, int damage);
     std::string getType() const;
     int getDamage() const;
