@@ -10,19 +10,7 @@ private:
     std::string name;
     std::string model;
     int power;
-#ifndef TRANSFORMER_H
-#define TRANSFORMER_H
-
-#include <string>
-#include "Pilot.h"
-#include "Weapon.h"
-
-class Transformer {
-private:
-    std::string name;
-    std::string model;
-    int power;
-    Pilot pilot;  // Изменено на объект
+    Pilot pilot;  
     Weapon weapon; 
 public:
     Transformer();
