@@ -8,6 +8,8 @@ private:
     int timeOfTransformation; 
 public:
     SuperSila2(std::string name, std::string model, int power, const Pilot& pilot, const Weapon& weapon, int timeOfTransformation); 
+    SuperSila2(std::string name, std::string model, const Pilot& pilot, const Weapon& weapon, int timeOfTransformation);
+    SuperSila2(std::string name, int timeOfTransformation);
     
     int getTimeOfTransformation() const;
     void setTimeOfTransformation(int newTimeOfTransformation);

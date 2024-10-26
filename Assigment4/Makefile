@@ -1,5 +1,3 @@
-
-
 myProg: main.o Transformer.o Pilot.o SuperSila1.o SuperSila2.o TankCapacity.o Weapon.o
 	g++ main.o Transformer.o Pilot.o SuperSila1.o SuperSila2.o TankCapacity.o Weapon.o -o myProg
 

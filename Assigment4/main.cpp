@@ -14,9 +14,7 @@ bool isStronger(const TankCapacity& tank, const SuperSila1& s1) {
     return (tank.getPower() > s1.getPower()) || 
            (tank.getPower() == s1.getPower() && tank.getVolume() > s1.getSpeed());
 }
-//bool isEqual(const TankCapacity& tank, const SuperSila2& s2) {
-    //return (tank.getPower() == s2.getPower() && tank.getVolume() == s2.getTimeOfTransformation());
-//}
+
 int main() {
  
     Pilot pilot("John Doe");
@@ -26,38 +24,34 @@ int main() {
     TankCapacity tank2("Tank2", "Model B", pilot, weapon, 250);
     TankCapacity tank3("Tank3", 300); 
     
-    SuperSila1 supertank1("Super Tank", "Model A", 200, pilot, weapon, 500, 50);
-    SuperSila1 supertank2("Super Tank Beta", "Model B", pilot, weapon, 400, 75);
+    SuperSila1 supertank1("Super Tank", "Model Aрр", 200, pilot, weapon, 500, 50);
+    SuperSila1 supertank2("Super Tank Beta", "Model Bмм", pilot, weapon, 400, 75);
     SuperSila1 supertank3("Super Tank Gamma", 300, 100);
 
-    //SuperSila1 superSila1("Optimus Prime", "Model X", 800, pilot, weapon, 200);
+
     SuperSila2 superSila2("Megatron", "Model Y", 750, pilot, weapon, 5);
-    //TankCapacity tankCapacity("Bumblebee", "Model Z", 600, pilot, weapon, 100);
-    
+    SuperSila2 superSila2_default("Starscream", "Model Z", pilot, weapon, 10); 
+    SuperSila2 superSila2_minimal("Thundercracker", 15); 
+
+
     std::cout << supertank1 << std::endl;
     std::cout << superSila2 << std::endl;
+    std::cout << superSila2_default << std::endl;
+    std::cout << superSila2_minimal << std::endl;
     std::cout << tank1 << std::endl;
-    
-    
 
     if (isStronger(supertank1, superSila2)) {
-        std::cout << "Optimus Prime is stronger than Megatron" << std::endl;
+        std::cout << "Super Tank is stronger than Megatron" << std::endl;
     } else {
-        std::cout << "Megatron is stronger than Optimus Prime" << std::endl;
+        std::cout << "Megatron is stronger than Super Tank" << std::endl;
     }
 
     if (isStronger(tank1, supertank1)) {
-        std::cout << "Bumblebee is stronger than Optimus Prime" << std::endl;
+        std::cout << "Tank1 is stronger than Super Tank" << std::endl;
     } else {
-        std::cout << "Optimus Prime is stronger than Bumblebee" << std::endl;
+        std::cout << "Super Tank is stronger than Tank1" << std::endl;
     }
 
- 
-    //if (isEqual(tankCapacity, superSila2)) {
-        //std::cout << "TankCapacity is equal to SuperSila2" << std::endl;
-    //} else {
-        //std::cout << "TankCapacity is not equal to SuperSila2" << std::endl;
-    //}
 
     return 0;
 }
