@@ -1,38 +1,20 @@
-
 #include "SuperSila1.h"
 #include <iostream>
 
-SuperSila1::SuperSila1(std::string name, std::string model, int power, Pilot& pilot, Weapon weapon, int speed)
-    : Transformer(name, model, power, pilot, weapon), speed(speed) {}
+SuperSila1::SuperSila1(std::string name, std::string model, int power, Pilot& pilot, Weapon weapon, int volume, int specialPower)
+    : Transformer(name, model, power, pilot, weapon), specialPower(specialPower), speed(0) {} // Исправлено количество инициализаторов
+
+SuperSila1::SuperSila1(std::string name, std::string model, Pilot& pilot, Weapon weapon, int volume, int specialPower)
+    : Transformer(name, model, 100, pilot, weapon), specialPower(specialPower), speed(0) {}
+
+SuperSila1::SuperSila1(std::string name, int volume, int specialPower)
+    : Transformer(name, "Unknown Model", 100, Pilot(), Weapon()), specialPower(specialPower), speed(0) {}
 
 int SuperSila1::getSpeed() const { return speed; }
 void SuperSila1::setSpeed(int newSpeed) { speed = newSpeed; }
 
 std::ostream& operator<<(std::ostream& os, const SuperSila1& superSila) {
     os << static_cast<const Transformer&>(superSila);
-    os << "\nSpeed: " << superSila.getSpeed();
+    os << "\nSpeed: " << superSila.getSpeed() << "\nSpecial Power: " << superSila.specialPower; // Добавьте, если нужно отображать specialPower
     return os;
-}
-bool SuperSila1::operator<(const SuperSila1& other) const {
-    return speed < other.speed; 
-}
-
-bool SuperSila1::operator>(const SuperSila1& other) const {
-    return speed > other.speed; 
-}
-
-bool SuperSila1::operator<=(const SuperSila1& other) const {
-    return !(*this > other);
-}
-
-bool SuperSila1::operator>=(const SuperSila1& other) const {
-    return !(*this < other); 
-}
-
-bool SuperSila1::operator==(const SuperSila1& other) const {
-    return speed == other.speed; 
-}
-
-bool SuperSila1::operator!=(const SuperSila1& other) const {
-    return !(*this == other); 
 }
