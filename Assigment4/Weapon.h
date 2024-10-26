@@ -1,4 +1,3 @@
-/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha3*/
 #ifndef WEAPON_H
 #define WEAPON_H
 
@@ -9,10 +8,10 @@ private:
     std::string type;
     int damage;
 public:
-    Weapon();
-    Weapon(std::string type, int damage);
-    std::string getType() const;
-    int getDamage() const;
+    Weapon(); // Конструктор по умолчанию
+    Weapon(std::string type, int damage); // Конструктор с параметрами
+    std::string getType() const; // Изменено на const
+    int getDamage() const; // Изменено на const
 };
 
 #endif

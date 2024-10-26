@@ -1,11 +1,42 @@
-/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha3*/
+
 #include "SuperSila2.h"
 #include "Pilot.h"
 #include "Weapon.h"
+#include <iostream>
+#include <string>
 
-
-SuperSila2::SuperSila2(std::string name, std::string model, int power, Pilot& pilot, Weapon weapon, int timeOfTransformation)
+SuperSila2::SuperSila2(std::string name, std::string model, int power, const Pilot& pilot, const Weapon& weapon, int timeOfTransformation)
     : Transformer(name, model, power, pilot, weapon), timeOfTransformation(timeOfTransformation) {}
 
 int SuperSila2::getTimeOfTransformation() const { return timeOfTransformation; }
 void SuperSila2::setTimeOfTransformation(int newTimeOfTransformation) { timeOfTransformation = newTimeOfTransformation; }
+
+std::ostream& operator<<(std::ostream& os, const SuperSila2& superSila) {
+    os << static_cast<const Transformer&>(superSila); 
+    os << "\nTimeOfTransformation: " << std::to_string(superSila.getTimeOfTransformation());
+    return os;
+}
+
+bool SuperSila2::operator<(const SuperSila2& other) const {
+    return timeOfTransformation < other.timeOfTransformation; 
+}
+
+bool SuperSila2::operator>(const SuperSila2& other) const {
+    return timeOfTransformation > other.timeOfTransformation;  
+}
+
+bool SuperSila2::operator<=(const SuperSila2& other) const {
+    return !(*this > other); 
+}
+
+bool SuperSila2::operator>=(const SuperSila2& other) const {
+    return !(*this < other); 
+}
+
+bool SuperSila2::operator==(const SuperSila2& other) const {
+    return timeOfTransformation == other.timeOfTransformation;  
+}
+
+bool SuperSila2::operator!=(const SuperSila2& other) const {
+    return !(*this == other); 
+}
