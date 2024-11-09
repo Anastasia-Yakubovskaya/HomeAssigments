@@ -4,6 +4,30 @@
 #include "Pilot.h" 
 #include "Weapon.h"
 
+class MockTransformer : public Transformer {
+public:
+    MockTransformer() : Transformer() {}
+    ~MockTransformer() { destructorCalled = true; }
+    bool destructorCalled = false; 
+};
+TEST(Transformer, destructorCalled) {
+    {
+        MockTransformer mockTransformer;
+    }
+    MockTransformer mock;
+    EXPECT_TRUE(mock.destructorCalled); 
+}
+
+TEST(Transformer, constructorInitializesMembers) {
+    Pilot pilot("Optimus Pilot"); 
+    Weapon weapon("Laser", 100); 
+    Transformer transformer("Optimus Prime", "Meteor", 1000, pilot, weapon);
+    EXPECT_EQ(transformer.getName(), "Optimus Prime");
+    EXPECT_EQ(transformer.getModel(), "Meteor");
+    EXPECT_EQ(transformer.getPower(), 1000);
+    EXPECT_EQ(transformer.getWeaponType(), weapon.getType());
+    EXPECT_EQ(transformer.getWeaponDamage(), weapon.getDamage());
+}
 
 TEST(Transformer, getName) {
     Pilot pilot("Optimus Pilot"); 

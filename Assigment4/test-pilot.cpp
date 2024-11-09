@@ -4,11 +4,11 @@
 
 TEST(Pilot, getName) {
     Pilot pilot("Optimus Pilot"); 
-    EXPECT_EQ(pilot.getName(), "Optimus Pilot"); // Исправлено на "Optimus Pilot"
+    EXPECT_EQ(pilot.getName(), "Optimus Pilot"); 
 }
 
 TEST(Pilot, setName) {
     Pilot pilot("Optimus Pilot"); 
     pilot.setName("Optimus pilots");
-    EXPECT_EQ(pilot.getName(), "Optimus pilots"); // Это оставляем, поскольку все верно
+    EXPECT_EQ(pilot.getName(), "Optimus pilots"); 
 }
