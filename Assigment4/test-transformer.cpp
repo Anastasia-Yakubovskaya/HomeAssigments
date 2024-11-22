@@ -1,4 +1,3 @@
-/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha3*/
 #include "gtest/gtest.h"
 #include "Transformer.h"
 #include "Pilot.h" 
@@ -6,17 +5,13 @@
 
 class MockTransformer : public Transformer {
 public:
-    MockTransformer() : Transformer() {}
+    MockTransformer() : Transformer() {
+        destructorCalled = false; 
+    }
     ~MockTransformer() { destructorCalled = true; }
     bool destructorCalled = false; 
 };
-TEST(Transformer, destructorCalled) {
-    {
-        MockTransformer mockTransformer;
-    }
-    MockTransformer mock;
-    EXPECT_TRUE(mock.destructorCalled); 
-}
+
 
 TEST(Transformer, constructorInitializesMembers) {
     Pilot pilot("Optimus Pilot"); 
@@ -100,4 +95,11 @@ TEST(Transformer, move) {
     Weapon weapon("Laser", 100); 
     Transformer transformer("Optimus Prime", "Meteor", 1000, pilot, weapon);
     EXPECT_TRUE(transformer.move()); 
+}
+
+TEST(Transformer, destructorCalled) {
+    MockTransformer* mockTransformer = new MockTransformer(); 
+    EXPECT_FALSE(mockTransformer->destructorCalled); 
+    delete mockTransformer;
+    EXPECT_TRUE(mockTransformer->destructorCalled); 
 }
