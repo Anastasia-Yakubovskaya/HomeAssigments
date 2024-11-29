@@ -3,15 +3,16 @@
 
 #include <string>
 
-class Weapon {
+class Weapon
+{
 private:
     std::string type;
     int damage;
 public:
-    Weapon(); 
-    Weapon(std::string type, int damage); 
-    std::string getType() const; 
-    int getDamage() const; 
+    Weapon();
+    Weapon(std::string type, int damage);
+    std::string getType() const;
+    int getDamage() const;
 };
 
 #endif

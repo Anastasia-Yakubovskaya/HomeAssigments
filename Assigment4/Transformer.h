@@ -6,18 +6,19 @@
 #include "Pilot.h"
 #include "Weapon.h"
 
-class Transformer {
+class Transformer
+{
 private:
     std::string name;
     std::string model;
     int power;
-    Pilot pilot; 
-    Weapon weapon; 
+    Pilot pilot;
+    Weapon weapon;
 public:
     Transformer();
     Transformer(std::string p_name, std::string p_model, int p_power, const Pilot& pilot, const Weapon& weapon);
     virtual ~Transformer();
-    
+
 
     std::string getName() const;
     void setName(std::string newName);
@@ -35,4 +36,4 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Transformer& transformer);
 };
 
-#endif 
+#endif

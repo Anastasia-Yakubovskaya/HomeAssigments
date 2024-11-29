@@ -3,14 +3,15 @@
 
 #include "Transformer.h"
 
-class TankCapacity : public Transformer {
+class TankCapacity : public Transformer
+{
 private:
     int volume;
 public:
     TankCapacity(std::string name, std::string model, int power, Pilot& pilot, Weapon weapon, int volume);
     TankCapacity(std::string name, std::string model, Pilot& pilot, Weapon weapon, int volume);
     TankCapacity(std::string name, int volume);
-    
+
     int getVolume() const;
     void setVolume(int newVolume);
     friend std::ostream& operator<<(std::ostream& os, const TankCapacity& tankCapacity);

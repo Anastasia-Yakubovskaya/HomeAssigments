@@ -3,7 +3,8 @@
 
 #include <string>
 
-class Pilot {
+class Pilot
+{
 private:
     std::string name;
 public:
@@ -13,4 +14,4 @@ public:
     void setName(std::string newName); // Метод для установки имени
 };
 
-#endif 
+#endif
