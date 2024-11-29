@@ -4,7 +4,7 @@
 ## Contacts
 st130155@stdudent.spbu.ru
 ## Description
-Home assigment3 - several classes on the topic of transformers, three inherited classes, association and composition, setters and getters
+Home assigment4  - several classes on the topic of transformers, three inherited classes, association and composition, setters and getters
 ## Build
 Makefile
 ## Run
