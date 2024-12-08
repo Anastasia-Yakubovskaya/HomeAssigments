@@ -53,9 +53,9 @@ TEST(Autobot, operatorLessThan) {
 
     Pilot pilot2("Megatron");
     Weapon weapon2("Cannon", 150);
-    Autobot supersila2("Megatron", "Model Y", 600, pilot2, weapon2, 600, 100); 
+    Autobot decepticon("Megatron", "Model Y", 600, pilot2, weapon2, 600, 100); 
 
-    EXPECT_TRUE(Autobot < supersila2); 
+    EXPECT_TRUE(Autobot < Decepticon); 
 }
 
 

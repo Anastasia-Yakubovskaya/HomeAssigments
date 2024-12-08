@@ -33,6 +33,11 @@ int main() {
 
 
 
+    tank1.transform();
+    tank1.openFire();
+    tank1.ultra();
+    
+    
     supertank1.transform();
     supertank1.openFire();
     supertank1.ultra();
@@ -42,13 +47,13 @@ int main() {
     megatron.ultra();
     
     
-    std::cout << supertank1 << std::endl;
-    std::cout << megatron << std::endl;
-    std::cout << starscream << std::endl;
-    std::cout << thundercracker << std::endl;
-    std::cout << tank1 << std::endl;
+    //std::cout << supertank1 << std::endl;
+    //std::cout << megatron << std::endl;
+    //std::cout << starscream << std::endl;
+    //std::cout << thundercracker << std::endl;
+    //std::cout << tank1 << std::endl;
 
-    if (isStronger(supertank1, megatron)) {
+    /*if (isStronger(supertank1, megatron)) {
         std::cout << "Super Tank is stronger than Megatron" << std::endl;
     } else {
         std::cout << "Megatron is stronger than Super Tank" << std::endl;
@@ -58,7 +63,7 @@ int main() {
         std::cout << "Tank1 is stronger than Super Tank" << std::endl;
     } else {
         std::cout << "Super Tank is stronger than Tank1" << std::endl;
-    }
+    }*/
 
     return 0;
 }

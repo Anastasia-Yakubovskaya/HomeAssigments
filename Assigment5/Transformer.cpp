@@ -12,7 +12,6 @@ Transformer::Transformer(std::string p_name, std::string p_model, int p_power, c
     : name(p_name), model(p_model), power(p_power), pilot(pilot), weapon(weapon) {}
 
 Transformer::~Transformer() {
-    std::cout << name << " is being destroyed." << std::endl;
 }
 
 std::string Transformer::getName() const { return name; }
