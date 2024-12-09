@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha5*/
 #ifndef Autobot_H
 #define Autobot_H
 

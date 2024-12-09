@@ -1,4 +1,4 @@
-
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha5*/
 #include "Decepticon.h"
 #include "Pilot.h"
 #include "Weapon.h"

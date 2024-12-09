@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha5*/
 #ifndef DECEPTICON_H
 #define DECEPTICON_H
 

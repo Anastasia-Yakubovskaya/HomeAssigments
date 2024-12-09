@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha5*/
 #ifndef PILOT_H
 #define PILOT_H
 

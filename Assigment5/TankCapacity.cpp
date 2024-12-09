@@ -1,3 +1,4 @@
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha5*/
 #include "TankCapacity.h"
 #include <iostream>
 
