@@ -4,6 +4,7 @@
 #include "TankCapacity.h"
 #include "Pilot.h"
 #include "Weapon.h"
+#include <vector>
 
 bool isStronger(const Autobot& s1, const Decepticon& s2) {
     return (s1.getPower() == s2.getPower() && s1.getSpeed() > s2.getTimeOfTransformation());
@@ -46,7 +47,7 @@ int main() {
     megatron.openFire();
     megatron.ultra();*/
     
-    Transformer* transformers[6];
+    /*Transformer* transformers[6];
     
     transformers[0] = &tank1;
     transformers[1] = &tank2;
@@ -55,7 +56,6 @@ int main() {
     transformers[4] = &megatron;
     transformers[5] = &starscream;
 
-    std::cout << "Testing methods through base class pointers:\n";
     
     for (int i = 0; i < 6; ++i) {
         transformers[i]->transform();
@@ -63,9 +63,33 @@ int main() {
         transformers[i]->ultra();
         
         std::cout << "\nDetails of Transformer " << i + 1 << ":\n" << *transformers[i] << std::endl;
+    }*/
+    
+    
+
+    std::vector<Transformer*> transformers;
+
+    transformers.push_back(&tank1);
+    transformers.push_back(&tank2);
+    transformers.push_back(&tank3);
+    
+    transformers.push_back(&supertank1);
+    transformers.push_back(&supertank2);
+    transformers.push_back(&supertank3);
+
+    transformers.push_back(&megatron);
+    transformers.push_back(&starscream);
+    transformers.push_back(&thundercracker);
+
+
+ 
+    
+    for (Transformer* transformer : transformers) {
+        transformer->transform();
+        transformer->openFire();
+        transformer->ultra();
+        
     }
-    
-    
     //std::cout << supertank1 << std::endl;
     //std::cout << megatron << std::endl;
     //std::cout << starscream << std::endl;
