@@ -33,7 +33,7 @@ int main() {
 
 
 
-    tank1.transform();
+    /*tank1.transform();
     tank1.openFire();
     tank1.ultra();
     
@@ -44,7 +44,26 @@ int main() {
 
     megatron.transform();
     megatron.openFire();
-    megatron.ultra();
+    megatron.ultra();*/
+    
+    Transformer* transformers[6];
+    
+    transformers[0] = &tank1;
+    transformers[1] = &tank2;
+    transformers[2] = &supertank1;
+    transformers[3] = &supertank2;
+    transformers[4] = &megatron;
+    transformers[5] = &starscream;
+
+    std::cout << "Testing methods through base class pointers:\n";
+    
+    for (int i = 0; i < 6; ++i) {
+        transformers[i]->transform();
+        transformers[i]->openFire();
+        transformers[i]->ultra();
+        
+        std::cout << "\nDetails of Transformer " << i + 1 << ":\n" << *transformers[i] << std::endl;
+    }
     
     
     //std::cout << supertank1 << std::endl;
