@@ -5,55 +5,49 @@
 #include <vector>
 
 template <typename T>
-class MyClass
-{
+class MyClass {
 private:
     T instance;
     int number;
     std::vector<float> vec;
 
 public:
-    MyClass(const T& obj, int num, const std::vector<float>& v)
+    MyClass(const T& obj, int num, const std::vector<float>& v) 
         : instance(obj), number(num), vec(v) {}
 
-    bool foo()
-    {
-        return instance.bar(number, vec);
+    bool foo() {
+        return instance.bar(number, vec); 
     }
 };
 
 template <>
-class MyClass<int>
-{
+class MyClass<int> {
 private:
     int instance;
     int number;
     std::vector<float> vec;
 
 public:
-    MyClass(int obj, int num, const std::vector<float>& v)
+    MyClass(int obj, int num, const std::vector<float>& v) 
         : instance(obj), number(num), vec(v) {}
 
-    bool foo()
-    {
+    bool foo() {
         return true;
     }
 };
 
 template <>
-class MyClass<double>
-{
+class MyClass<double> {
 private:
     double instance;
     int number;
     std::vector<float> vec;
 
 public:
-    MyClass(double obj, int num, const std::vector<float>& v)
+    MyClass(double obj, int num, const std::vector<float>& v) 
         : instance(obj), number(num), vec(v) {}
 
-    bool foo()
-    {
+    bool foo() {
         return false;
     }
 };

@@ -1,4 +1,4 @@
-
+/*Yakubovskaya Anastasya st130155@student.spbu.ru Zadacha6*/
 #include <iostream>
 #include "Class.h"
 
