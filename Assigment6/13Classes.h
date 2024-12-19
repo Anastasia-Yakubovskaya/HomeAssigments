@@ -1,5 +1,6 @@
-#ifndef CLASS_H
-#define CLASS_H
+
+#ifndef CLASSES_H
+#define CLASSES_H
 
 #include <vector>
 
@@ -21,7 +22,6 @@ public:
     void c_2_3();
 };
 
-
 class Class3 {
 public:
     bool bar(int num, const std::vector<float>& vec);
@@ -31,4 +31,4 @@ public:
     void c_3_3();
 };
 
-#endif
+#endif // CLASSES_H

@@ -1,36 +1,55 @@
-#include <vector>
-#include <iostream>
+#ifndef MYCLASS_H
+#define MYCLASS_H
 
-template <class T>
+#include <vector>
+
+template <typename T>
 class MyClass {
 private:
     T instance;
     int number;
     std::vector<float> vec;
+
 public:
-    MyClass(const T obj, int num, std::vector<float>& v) : instance(obj), number(num), vec(v) {}
-    
-    bool foo();
+    MyClass(const T& obj, int num, const std::vector<float>& v) 
+        : instance(obj), number(num), vec(v) {}
+
+    bool foo() {
+        return instance.bar(number, vec); 
+    }
 };
 
-/*template<>
-class MyClass <instance int> {
-    T instance;
+template <>
+class MyClass<int> {
+private:
+    int instance;
     int number;
     std::vector<float> vec;
-public:
-    MyClass(const T obj, int num, std::vector<float>& v) : instance(obj), number(num), vec(v) {}
-    
-    bool foo();
-}
 
-template<>
-class MyClass<instance double> {
-    T instance;
+public:
+    MyClass(int obj, int num, const std::vector<float>& v) 
+        : instance(obj), number(num), vec(v) {}
+
+    bool foo() {
+        return true;
+    }
+};
+
+template <>
+class MyClass<double> {
+private:
+    double instance;
     int number;
     std::vector<float> vec;
+
 public:
-    MyClass(const T obj, int num, std::vector<float>& v) : instance(obj), number(num), vec(v) {}
-  
-    bool foo();
-}*/
+    MyClass(double obj, int num, const std::vector<float>& v) 
+        : instance(obj), number(num), vec(v) {}
+
+    bool foo() {
+        return false;
+    }
+};
+
+#endif // MYCLASS_H
+

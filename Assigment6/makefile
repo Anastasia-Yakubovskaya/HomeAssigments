@@ -1,44 +1,53 @@
-# Определение компилятора и флагов
-CXX = g++
-CXXFLAGS = -I. -std=c++17 -g -fPIC -Wall -Werror -Wpedantic -O2
+PROJECT = myProg
 
-# Основная цель
-TARGET = myProg
-SRCS = main.cpp Class.h Class.cpp 
-OBJS = $(SRCS:.cpp=.o)
+# Библиотека проекта
+LIBPROJECT = lib$(PROJECT).a 
 
-# Тестовые цели
-TEST_TARGETS = Class Tests
-TEST_SRCS = test_MyTemplateClass.cpp test-Class1.cpp test-Class2.cpp test-Class3.cpp 
-TEST_OBJS = $(TEST_SRCS:.cpp=.o)
+CXX = g++ 
+AR = ar 
+AFLAGS = rsv 
+CCXFLAGS = -I. -std=c++17 -Werror -Wpedantic -Wall -g -fPIC 
 
-# Основная цель по умолчанию
-all: $(TARGET)
+# Флаги линковки
+LDXXFLAGS = $(CCXFLAGS) -L. -l:$(LIBPROJECT) 
+LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread 
 
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+# Директории и файлы
+DEPS = $(wildcard *.h) 
+SOURCES = main.cpp 13Classes.cpp
+OBJ = $(SOURCES:.cpp=.o) 
 
-# Правило для создания объектных файлов из исходных файлов
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Тестовые файлы
+TEST_SOURCES = Tests.cpp 
+TEST_OBJ = $(TEST_SOURCES:.cpp=.o) 
 
-# Правила для тестов
-testMyTemplateClass: test_MyTemplateClass.o MyTemplateClass.o Class1.o Class2.o Class3.o 
-	$(CXX) $(CXXFLAGS) $^ -o $@ -lgtest -lgtest_main -pthread
+.PHONY: default all clean test 
 
-testClass1: test-Class1.o Class1.o 
-	$(CXX) $(CXXFLAGS) $^ -o $@ -lgtest -lgtest_main -pthread
+# Главная цель по умолчанию
+default: all 
 
-testClass2: test-Class2.o Class2.o 
-	$(CXX) $(CXXFLAGS) $^ -o $@ -lgtest -lgtest_main -pthread
+# Правило для компиляции объектных файлов
+%.o: %.cpp $(DEPS) 
+	$(CXX) $(CCXFLAGS) -c -o $@ $< 
 
-testClass3: test-Class3.o Class3.o 
-	$(CXX) $(CXXFLAGS) $^ -o $@ -lgtest -lgtest_main -pthread
+# Правило для сборки библиотеки
+$(LIBPROJECT): $(OBJ)
+	$(AR) $(AFLAGS) $@ $^ 
 
-# Цель для сборки всех тестов
-all_tests: $(TEST_TARGETS)
+# Правило для сборки исполняемого файла проекта
+$(PROJECT): main.o $(LIBPROJECT)
+	$(CXX) -o $@ main.o $(LDXXFLAGS)
 
-# Очистка объектных файлов и исполняемых файлов
+# Правило для тестирования
+test: $(LIBPROJECT) $(TEST_OBJ)
+	$(CXX) -o test-all $(TEST_OBJ) $(LDGTESTFLAGS)
+
+# Сборка всех целей
+all: $(PROJECT) test 
+
+# Очистка временных файлов
 clean:
-	rm -f $(TARGET) *.o $(TEST_TARGETS)
-
+	rm -f *.o 
+	rm -f $(PROJECT) 
+	rm -f $(LIBPROJECT) 
+	rm -f test-all

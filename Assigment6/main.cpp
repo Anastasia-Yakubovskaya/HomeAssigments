@@ -1,11 +1,9 @@
+
 #include <iostream>
-#include "gtest/gtest.h"
+#include "Class.h"
 
-// Объявление тестов (включая все тесты из test_MyTemplateClass.cpp)
-extern "C" void run_tests();
-
-int main(int argc, char **argv) {
-   ::testing::InitGoogleTest(&argc, argv);
-   return RUN_ALL_TESTS();
+int main()
+{
+    std::cout << "To run the tests, you need to type in the command line: ./test-all" << std::endl;
+    return 0;
 }
-
